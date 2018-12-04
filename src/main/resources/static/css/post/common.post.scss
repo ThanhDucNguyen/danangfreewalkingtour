@@ -1,0 +1,20 @@
+a {
+    transition: 0.3s all ease;
+    text-decoration: none !important;
+    color: black;
+    &:hover{
+        color: #FFBA00 !important;
+
+    }
+}
+body {
+    font-family: Oxygen !important;
+    background: rgba(229, 229, 229, 0.158);
+}
+main {
+    max-width: 1366px;
+    margin:0  auto;
+}
+p{
+    margin: 0;
+}

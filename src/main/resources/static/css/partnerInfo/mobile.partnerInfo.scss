@@ -1,0 +1,531 @@
+@media only screen and (max-width: 768px) {
+    div.chat {
+        position: fixed;
+        z-index: 50;
+        right: 4%;
+        bottom: 5%;
+        a {
+            img {
+                margin-top: 1px;
+                height: 45px;
+            }
+            svg {
+                font-size: 60px;
+                color: #0084ff;
+            }
+        }
+        div {
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 35px;
+            height: 25px;
+            background: white;
+        }
+    }
+    header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+        padding-bottom: 5px;
+        .head-img {
+            display: none;
+        }
+        .things-catalog {
+            background: white;
+            flex: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            .things-but {
+                width: calc(100% / 6);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transform: translateY(4px);
+                i::before {
+                    font-size: 30px;
+                    margin: 0;
+                }
+                p {
+                    display: none;
+                }
+            }
+        }
+        .things-cart {
+            display: none;
+        }
+    }
+    main {
+        width: 100%;
+        .cover {
+            width: 100%;
+            max-height: 390px;
+            margin: 0;
+            overflow: hidden;
+            margin: auto;
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .info {
+            width: 100%;
+            margin: auto;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            .info-avt {
+                width: 100%;
+                position: relative;
+                .avt {
+                    width: 20%;
+                    position: absolute;
+                    right: 50%;
+                    img {
+                        width: 100%;
+                        border-radius: 50%;
+                        border: 2px solid white;
+                        object-fit: cover;
+                        transform: translate(50%, -50%);
+                    }
+                }
+            }
+            .info-text {
+                margin: 10px 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                .name-text {
+                    font-size: 16px;
+                    text-align: center;
+                }
+                .info-item {
+                    display: flex;
+                    margin-top: 5px;
+                    padding: 0 10px;
+                    svg {
+                        font-size: 14px;
+                        color: #FFBA00;
+                        transform: translateY(3px);
+                        width: 14px;
+                        line-height: 14px;
+                    }
+                    p {
+                        margin: 0;
+                        font-size: 14px;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+        .body {
+            width: 100%;
+            margin: auto;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            background: none;
+            justify-content: space-between;
+            .left-contain {
+                width: 100%;
+                .recommend {
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    padding: 8px 5px;
+                    background: white;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .menu-title {
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+                    .img-recommend {
+                        width: 100%;
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .text-recommend {
+                        width: 100%;
+                        padding: 0 10px;
+                        .title {
+                            text-align: center;
+                            position: relative;
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+                        .description {
+                            font-size: 14px;
+                            line-height: 18px;
+                        }
+                        .cost {
+                            font-size: 16px;
+                            font-weight: bold;
+                            text-align: center;
+                        }
+                    }
+                }
+                .menu-list {
+                    background: white;
+                    padding: 0 2.5px 10px;
+                    .slick-slide {
+                        padding: 0 2.5px;
+                    }
+                    .show {
+                        .img-item {
+                            width: 100%;
+                            img {
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                            .hidden {
+                                display: none;
+                            }
+                        }
+                        .name {
+                            padding-top: 5px;
+                            font-size: 12px;
+                            line-height: 14px;
+                            height: 33px;
+                            overflow: hidden;
+                            text-align: center;
+                        }
+                        .cost {
+                            font-size: 12px;
+                            line-height: 14px;
+                            text-align: center;
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+                .diary {
+                    border-radius: 5px;
+                    margin-top: 15px;
+                    width: 100%;
+                    .diary-item {
+                        border-radius: 5px;
+                        padding: 8px 15px;
+                        margin: 10px 0 0;
+                        background: white;
+                        .day {
+                            display: flex;
+                            .day-icon {
+                                color: #FFBA00;
+                                transform: rotate(-45deg);
+                                margin-right: 5px;
+                                font-size: 15px;
+                            }
+                            .day-text {
+                                font-size: 15px;
+                                font-weight: bold;
+                            }
+                        }
+                        .post {
+                            .post-text {
+                                font-size: 15px;
+                            }
+                            .post-img {
+                                width: 100%;
+                                margin: 6px 0;
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                            .post-button {
+                                display: flex;
+                                .button-item {
+                                    a {
+                                        display: flex;
+                                        margin-right: 30px;
+                                        font-size: 15px;
+                                        color: #7F7F7F;
+                                        .button-icon {
+                                            transform: translateY(-1px);
+                                            margin-right: 3px;
+                                            width: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .comment {
+                            .cmt-item {
+                                display: flex;
+                                justify-content: space-between;
+                                margin: 10px 0;
+                                .avt-cmt {
+                                    width: 15%;
+                                    img {
+                                        width: 100%;
+                                        object-fit: cover;
+                                        border-radius: 100%;
+                                    }
+                                }
+                                .text-cmt {
+                                    width: 83%;
+                                    background: #FAFAFA;
+                                    border-radius: 22px;
+                                    padding: 5px 10px;
+                                    .name {
+                                        font-weight: bold;
+                                        font-size: 13px;
+                                    }
+                                    .text {
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .diary-button {
+                        padding:0 0 10px 0;
+                        margin-bottom: 10px;
+                        background: white;
+                        position: relative;
+                        a {
+                            button {
+                                background: #FFBA00;
+                                color: white;
+                                border: none;
+                                border-radius: 3px;
+                                padding: 5px 7px;
+                                cursor: pointer;
+                                display: block;
+                                position: relative;
+                                left: 50%;
+                                transform: translate(-50%, 0);
+                                border-radius: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .right-contain {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                .maps {
+                    order: 2;
+                    border-radius: 5px;
+                    background: white;
+                    padding: 8px 5px;
+                    margin-bottom: 10px;
+                    iframe {
+                        width: 100% !important;
+                    }
+                    .address-title {
+                        display: flex;
+                        .address-icon {
+                            font-size: 18px;
+                            width: 18px;
+                            margin-right: 5px;
+                            transform: translateY(-2px);
+                        }
+                        .address-name {
+                            font-weight: bold;
+                            font-size: 14px;
+                        }
+                    }
+                    .address-detail {
+                        margin-left: 23px;
+                        font-size: 14px;
+                    }
+                    .address-guide {
+                        margin-left: 23px;
+                        font-size: 14px;
+                        a {
+                            color: #FFBA00;
+                        }
+                    }
+                    .phone {
+                        display: flex;
+                        .phone-icon {
+                            font-size: 18px;
+                            width: 18px;
+                            margin-right: 5px;
+                            text-align: center;
+                            transform: translateY(-2px);
+                        }
+                        .phone-num {
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .rated {
+                    order: 1;
+                    background: white;
+                    padding: 8px 5px;
+                    border-radius: 5px;
+                    .comment-title {
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+                    .total-rated {
+                        position: relative;
+                        margin-bottom: 10px;
+                        height: 38px;
+                        .total-num {
+                            position: absolute;
+                            right: 51%;
+                            display: flex;
+                            padding: 7px 6px;
+                            background: #FFBA00;
+                            color: white;
+                            height: 38px;
+                            border-radius: 5px;
+                            .point {
+                                font-size: 16px;
+                            }
+                            .space {
+                                font-size: 13px;
+                            }
+                            .max {
+                                font-size: 13px;
+                            }
+                        }
+                        .count-rated {
+                            position: absolute;
+                            left: 51%;
+                            display: flex;
+                            flex-direction: column;
+                            font-size: 16px;
+                            .quantity {
+                                font-weight: bold;
+                                line-height: 19px;
+                            }
+                            .text {
+                                line-height: 19px;
+                            }
+                        }
+                    }
+                    .single-rated {
+                        display: flex;
+                        flex-wrap: wrap;
+                        .info {
+                            width: calc(100% / 3 * 2);
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: flex-start;
+                            margin: 0;
+                            .avt {
+                                width: 25%;
+                                margin-right: 8px; 
+                                img {
+                                    width: 100%;
+                                    border-radius: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                            .name {
+                                font-size: 14px;
+                                font-weight: bold;
+                            }
+                        }
+                        .rate {
+                            width: calc(100% / 3);
+                            display: flex;
+                            justify-content: flex-end;
+                            padding: 8%;
+                            align-items: center;
+                            .point {
+                                font-size: 16px;
+                            }
+                            .space {
+                                font-size: 13px;
+                            }
+                            .max {
+                                font-size: 13px;
+                            }
+                        }
+                        .rate-cmt {
+                            font-size: 12px;
+                        }
+                        hr {
+                            width: 100%;
+                        }
+                    }
+                    .more {
+                        width: 100%;
+                        text-align: center;
+                        margin-bottom: 15px;
+                        a {
+                            color: #FFBA00;
+                            font-size: 15px;
+                        }
+                    }
+                    .your-rate {
+                        width: 100%;
+                        position: relative;
+                        button {
+                            position: relative;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            text-align: center;
+                            color: white;
+                            background: #FFBA00;
+                            border: none;
+                            padding: 8px 10px;
+                            border-radius: 20px;
+                            font-size: 14px;
+                            svg {
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+                }
+                .socialMedia {
+                    order: 3;
+                    margin: 15px auto 0;
+                    width: 60%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    a {
+                        flex-grow: 1;
+                        text-align: center;
+                    }
+                    svg {
+                        color: rgb(95, 86, 86);
+                        font-size: 25px;
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+                .contact {
+                    order: 4;
+                    .contact-item {
+                        margin: 4px;
+                        padding: 0 5px;
+                        a {
+                            font-size: 12px;
+                            svg {
+                                width: 14px !important;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                    .backhome {
+                        background: #282C2F;
+                        padding: 11px 0;
+                        text-align: center;
+                        color: white;
+                        a {
+                            font-size: 16px !important;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
