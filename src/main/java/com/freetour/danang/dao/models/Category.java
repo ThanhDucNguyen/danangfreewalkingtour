@@ -15,6 +15,17 @@ public class Category implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
+    private Set<Restaurant> restaurants;
+
+    public Set<Restaurant> getRestaurants() {
+        return restaurants;
+    }
+
+    public void setRestaurants(Set<Restaurant> restaurants) {
+        this.restaurants = restaurants;
+    }
+
     public Long getId() {
         return id;
     }

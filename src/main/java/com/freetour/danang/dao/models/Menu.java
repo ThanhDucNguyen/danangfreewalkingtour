@@ -17,6 +17,54 @@ public class Menu implements Serializable {
     @Column(name = "price")
     private Double price;
 
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "image")
+    private String image;
+
+    @Column(name = "featured")
+    private Boolean featured;
+
+    @Column(name = "type")
+    private String type;
+
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
+
+    public Boolean getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        this.featured = featured;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
     public Long getId() {
         return id;
     }
@@ -33,6 +81,13 @@ public class Menu implements Serializable {
         this.name = name;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public Double getPrice() {
         return price;

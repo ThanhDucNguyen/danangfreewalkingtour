@@ -28,19 +28,19 @@
     <!-- header -->
     <header>
         <div class="head-img">
-            <a href="index.html">
+            <a href="/">
                 <img src="images/logo-changed.png" >
             </a>
         </div>
         <div class="things-catalog">
             <div class="things-but">
-                <a href="catalog.html" class="clicked">
+                <a href="/catalog-eat">
                     <i class="flaticon-ramen"></i>
                     <p>Eat</p>
                 </a>
             </div>
             <div class="things-but">
-                <a href="catalog.html">
+                <a href="/catalog-drink">
                     <i class="flaticon-cocktail"></i>
                     <p>Drink</p>
                 </a>
@@ -79,7 +79,7 @@
         <section class="info">
             <div class="info-avt">
                 <div class="avt">
-                    <img class="square-img"  src="images/things-avatar.jpg" >
+                    <img class="square-img"  th:src="${getPartNer.image}" >
                 </div>
             </div>
             <div class="info-text"  >
@@ -108,211 +108,36 @@
                 <div class="recommend">
                     <div class="menu-title">MENU</div>
                     <div class="img-recommend">
-                        <img class="oblong-img" data-src="images/18881809_1671359219839626_7215104255586781711_n.jpg" >
+                        <img class="oblong-img" th:src="${getFeatured.image}" >
                     </div>
                     <div class="text-recommend">
-                        <div class="title">
-                            Banh trang cuon thit heo
+                        <div class="title" th:text="${getFeatured.name}">
                         </div>
-                        <div class="description">
-                            To make the exact kind of roll, the pork chosen must have a balance between meat and fat. It is then boiled until it reaches
-                            a certain degree of softness. Boiled pork is sliced and placed onto the plate.
+                        <div class="description" th:text="${getFeatured.description}">
+
                         </div>
-                        <div class="cost">
-                            $15.00
+                        <div class="cost" th:text="${getFeatured.price}">
                         </div>
                     </div>
                 </div>
                 <div class="menu-list">
-                    <div class="list-col">
+                    <div class="list-col" th:each="info : ${getListMenu}">
                         <div class="list-item">
                             <div class="show">
                                 <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Include 4 tender baby squids, eat with lime and chili sauce.
+                                    <img th:src="${info.image}" class="menu-list-img" >
+                                    <div class="hidden" th:text="${info.description}">
+
                                     </div>
                                 </div>
-                                <div class="name">
-                                    Grilled baby squid
+                                <div class="name" th:text="${info.name}">
                                 </div>
-                                <div class="cost">
-                                    40,000 VND
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="show">
-                                <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Include 2 BBQ chicken wings made by flamed grilled and season with special spicy rub.
-                                    </div>
-                                </div>
-                                <div class="name">
-                                    SPICY BBQ CHICKEN WINGS
-                                </div>
-                                <div class="cost">
-                                    45,000 VND
+                                <div class="cost"><p> $ <span th:text="${info.price}"></span></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="list-col">
-                        <div class="list-item">
-                            <div class="show">
-                                <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Mixing with herbs and spices, wrapped in foil and slowly grilled. Eat with rice.
-                                    </div>
-                                </div>
-                                <div class="name">
-                                    Grilled whole fish
-                                </div>
-                                <div class="cost">
-                                    230,000 VND
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="show">
-                                <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Include 3 sausages on the flame grill.
-                                    </div>
-                                </div>
-                                <div class="name">
-                                    SMOKED SAUSAGES
-                                </div>
-                                <div class="cost">
-                                    95,000 VND
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-col">
-                        <div class="list-item">
-                            <div class="show">
-                                <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Include full rack, 4 smoked sausages, 2 pork cutlets, 4 spicy bbq chicken wings, 4 sliders, sizzling bbq chicken, 4 banh
-                                        bao, garden salad.
-                                    </div>
-                                </div>
-                                <div class="name">
-                                    BBQ SHARE PLATE “BIG MAN!”
-                                </div>
-                                <div class="cost">
-                                    775,000 VND
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="show">
-                                <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Include grilled shrimps, squid, cucumber, herb and dressed with sauce.
-                                    </div>
-                                </div>
-                                <div class="name">
-                                    TRUNG’S FamOUS BBQ SEAFOOD SALAD
-                                </div>
-                                <div class="cost">
-                                    60,000 VND
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-col">
-                        <div class="list-item">
-                            <div class="show">
-                                <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Caramel milk tea. The blending of sweet, fatty characteristics of caramel and aroma characteristic of Black Tea Milk Tea.
-                                    </div>
-                                </div>
-                                <div class="name">
-                                    Fried Banh Bao
-                                </div>
-                                <div class="cost">
-                                    28,000 vnd
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="show">
-                                <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Include Pepsi, 7up.
-                                    </div>
-                                </div>
-                                <div class="name">
-                                    SOFT DRINKS 1L JUG
-                                </div>
-                                <div class="cost">
-                                    25,000 VND
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-col">
-                        <div class="list-item">
-                            <div class="show">
-                                <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Some sorts of tiger, becks or Budweiser.
-                                    </div>
-                                </div>
-                                <div class="name">
-                                    BEER TOWER (3L)
-                                </div>
-                                <div class="cost">
-                                    140,000 VND
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="show">
-                                <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Some sorts of Johnny Walker Black, Jack Daniels, Absolut, Malibu, Southern Comfort, Bacardi Gold, Baileys, Cointreau.
-                                    </div>
-                                </div>
-                                <div class="name">
-                                    SPIRITS
-                                </div>
-                                <div class="cost">
-                                    60,000 VND
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-col">
-                        <div class="list-item">
-                            <div class="show">
-                                <div class="img-item">
-                                    <img data-src="images/thingstodo/han-cook.jpg" class="menu-list-img" >
-                                    <div class="hidden">
-                                        Include 3 beef filled with cheese.
-                                    </div>
-                                </div>
-                                <div class="name">
-                                    BEEF ROLLS W/ CHEESE
-                                </div>
-                                <div class="cost">
-                                    48,000 VND
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="diary">
                     <div class="diary-item">

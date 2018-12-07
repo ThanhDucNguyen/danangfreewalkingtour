@@ -39,12 +39,57 @@ public class Restaurant implements Serializable {
     @Column(name = "short_info")
     private String shortInfo;
 
+    @Column(name = "image")
+    private String image;
+
+    @Column(name = "type")
+    private Integer type;
+
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.EAGER)
+    private Set<Menu> menus;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Set<Menu> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(Set<Menu> menus) {
+        this.menus = menus;
+    }
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public String getName() {

@@ -13,6 +13,9 @@ public class RestaurantDTO {
     private String openCloseTime;
     private String phone;
     private String linkMap;
+    private String image;
+    private Integer type;
+    private Boolean featured;
     private List<MenuDTO> menus;
     private CategoryDTO category;
 
@@ -29,9 +32,36 @@ public class RestaurantDTO {
                 ", openCloseTime='" + openCloseTime + '\'' +
                 ", phone='" + phone + '\'' +
                 ", linkMap='" + linkMap + '\'' +
+                ", image='" + image + '\'' +
+                ", type=" + type +
+                ", featured=" + featured +
                 ", menus=" + menus +
                 ", category=" + category +
                 '}';
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public Boolean getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        this.featured = featured;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Long getId() {

@@ -4,7 +4,10 @@ public class MenuDTO {
     private Long id;
     private String name;
     private String description;
+    private String image;
+    private Boolean featured;
     private Double price;
+    private String type;
     private RestaurantDTO restaurant;
 
     @Override
@@ -13,9 +16,28 @@ public class MenuDTO {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", image='" + image + '\'' +
+                ", featured=" + featured +
                 ", price=" + price +
+                ", type='" + type + '\'' +
                 ", restaurant=" + restaurant +
                 '}';
+    }
+
+    public Boolean getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        this.featured = featured;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getName() {
@@ -32,6 +54,14 @@ public class MenuDTO {
 
     public Long getId() {
         return id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public void setId(Long id) {

@@ -39,8 +39,6 @@ public class ThingToDoServiceImpl implements ThingToDoService{
         return list;
     }
 
-
-
     @Override
     public List<RestaurantDTO> getListResEat() {
         List<RestaurantDTO> restaurantDTOList = new ArrayList<>();
@@ -49,6 +47,7 @@ public class ThingToDoServiceImpl implements ThingToDoService{
             RestaurantDTO restaurantDTO = new RestaurantDTO();
             restaurantDTO.setId(restaurant.getId());
             restaurantDTO.setName(restaurant.getName());
+            restaurantDTO.setImage(restaurant.getImage());
             restaurantDTO.setShortInfo(restaurant.getShortInfo());
             restaurantDTO.setPriceUS(restaurant.getPriceUS());
             restaurantDTO.setPriceVN(restaurant.getPriceVN());
@@ -65,6 +64,7 @@ public class ThingToDoServiceImpl implements ThingToDoService{
             RestaurantDTO restaurantDTO = new RestaurantDTO();
             restaurantDTO.setId(restaurant.getId());
             restaurantDTO.setName(restaurant.getName());
+            restaurantDTO.setImage(restaurant.getImage());
             restaurantDTO.setShortInfo(restaurant.getShortInfo());
             restaurantDTO.setPriceUS(restaurant.getPriceUS());
             restaurantDTO.setPriceVN(restaurant.getPriceVN());
@@ -77,21 +77,117 @@ public class ThingToDoServiceImpl implements ThingToDoService{
     public RestaurantDTO getPartNer(Long id) {
         Restaurant restaurant = restaurantRepository.listById(id);
         RestaurantDTO restaurantDTO = new RestaurantDTO();
+        restaurantDTO.setId(restaurant.getId());
         restaurantDTO.setName(restaurant.getName());
         restaurantDTO.setInfo(restaurant.getInfo());
         restaurantDTO.setAddress(restaurant.getAddress());
+        restaurantDTO.setImage(restaurant.getImage());
         restaurantDTO.setOpenCloseTime(restaurant.getTimeOC());
         restaurantDTO.setPriceUS(restaurant.getPriceUS());
         restaurantDTO.setPriceVN(restaurant.getPriceVN());
         restaurantDTO.setPhone(restaurant.getPhone());
+        restaurantDTO.setType(restaurant.getType());
         restaurantDTO.setLinkMap(restaurant.getLinkMap());
 
-        List<Long> list = new ArrayList<>();
-        Menu menu = new Menu();
-        menu.getId();
-        menu.getName();
-
-
         return restaurantDTO;
+    }
+
+    @Override
+    public List<MenuDTO> getPartNerMenu(Long id) {
+        List<MenuDTO> list = new ArrayList<>();
+        List<Menu> menus = menuRepository.listById(id);
+        for (Menu menu: menus){
+            MenuDTO menuDTO = new MenuDTO();
+            menuDTO.setId(menu.getId());
+            menuDTO.setName(menu.getName());
+            menuDTO.setImage(menu.getImage());
+            menuDTO.setDescription(menu.getDescription());
+            menuDTO.setPrice(menu.getPrice());
+            menuDTO.setFeatured(menu.getFeatured());
+
+            list.add(menuDTO);
+        }
+        return list;
+    }
+
+    @Override
+    public MenuDTO getFeatured(Long id) {
+        Menu menu = menuRepository.getFeatured(id);
+        MenuDTO menuDTO = new MenuDTO();
+        menuDTO.setId(menu.getId());
+        menuDTO.setName(menu.getName());
+        menuDTO.setImage(menu.getImage());
+        menuDTO.setDescription(menu.getDescription());
+        menuDTO.setPrice(menu.getPrice());
+
+        return menuDTO;
+    }
+
+    @Override
+    public List<RestaurantDTO> getMenuResEat() {
+        List<RestaurantDTO> restaurantDTOList = new ArrayList<>();
+        List<Restaurant> restaurants = restaurantRepository.findEatMenu();
+        for (Restaurant restaurant:restaurants){
+            RestaurantDTO restaurantDTO = new RestaurantDTO();
+            restaurantDTO.setId(restaurant.getId());
+            restaurantDTO.setName(restaurant.getName());
+            restaurantDTO.setImage(restaurant.getImage());
+            restaurantDTO.setShortInfo(restaurant.getShortInfo());
+            restaurantDTO.setPriceUS(restaurant.getPriceUS());
+            restaurantDTO.setPriceVN(restaurant.getPriceVN());
+            restaurantDTOList.add(restaurantDTO);
+        }
+        return restaurantDTOList;
+    }
+
+    @Override
+    public List<RestaurantDTO> getMenuResDrink() {
+        List<RestaurantDTO> restaurantDTOList = new ArrayList<>();
+        List<Restaurant> restaurants = restaurantRepository.findDrinkMenu();
+        for (Restaurant restaurant:restaurants){
+            RestaurantDTO restaurantDTO = new RestaurantDTO();
+            restaurantDTO.setId(restaurant.getId());
+            restaurantDTO.setName(restaurant.getName());
+            restaurantDTO.setImage(restaurant.getImage());
+            restaurantDTO.setShortInfo(restaurant.getShortInfo());
+            restaurantDTO.setPriceUS(restaurant.getPriceUS());
+            restaurantDTO.setPriceVN(restaurant.getPriceVN());
+            restaurantDTOList.add(restaurantDTO);
+        }
+        return restaurantDTOList;
+    }
+    @Override
+    public List<MenuDTO> getMenuFood(Long id) {
+        List<MenuDTO> list = new ArrayList<>();
+        List<Menu> menus = menuRepository.listByIdEAT(id);
+        for (Menu menu: menus){
+            MenuDTO menuDTO = new MenuDTO();
+            menuDTO.setId(menu.getId());
+            menuDTO.setName(menu.getName());
+            menuDTO.setImage(menu.getImage());
+            menuDTO.setDescription(menu.getDescription());
+            menuDTO.setPrice(menu.getPrice());
+            menuDTO.setFeatured(menu.getFeatured());
+
+            list.add(menuDTO);
+        }
+        return list;
+    }
+    @Override
+    public List<MenuDTO> getMenuDrink(Long id) {
+        List<MenuDTO> list = new ArrayList<>();
+        List<Menu> menus = menuRepository.listByIdDrink(id);
+        for (Menu menu: menus){
+            MenuDTO menuDTO = new MenuDTO();
+            menuDTO.setId(menu.getId());
+            menuDTO.setName(menu.getName());
+            menuDTO.setImage(menu.getImage());
+            menuDTO.setDescription(menu.getDescription());
+            menuDTO.setPrice(menu.getPrice());
+            menuDTO.setFeatured(menu.getFeatured());
+
+            list.add(menuDTO);
+        }
+        return list;
     }
 }
